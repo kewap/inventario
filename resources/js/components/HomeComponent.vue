@@ -67,7 +67,7 @@ export default {
   methods:{
       
     async guardar() {
-      axios.post("http://127.0.0.1:8000/pistolear/"+this.message).then((result) => {
+      axios.post("http://34.199.55.97/pistolear/"+this.message).then((result) => {
         this.message = '';
         this.message2 = 'despachado';
         console.log(result.data);
@@ -75,7 +75,7 @@ export default {
     },
 
     async getproducto(){
-        axios.get("http://127.0.0.1:8000/getpistolear/"+this.message).then((result) => {
+        axios.get("http://34.199.55.97/getpistolear/"+this.message).then((result) => {
         this.producto = result.data.nombre+result.data.descripcion;
         this.message2 = '';
         this.estado = result.data.estado;
@@ -84,7 +84,7 @@ export default {
     })
     },
     async getproducto2(){
-        axios.get("http://127.0.0.1:8000/productosall").then((result) => {
+        axios.get("http://34.199.55.97/productosall").then((result) => {
         this.eventos = result.data;
         console.log(result.data);
     })
