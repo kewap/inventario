@@ -83,7 +83,7 @@ export default {
         console.log(result.data);
     })
     },
-    async getproducto2(){
+    getproducto2(){
         axios.get("http://34.199.55.97/productosall").then((result) => {
         this.eventos = result.data;
         console.log(result.data);
