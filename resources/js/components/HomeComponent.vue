@@ -50,7 +50,7 @@ export default {
     name: 'table-evento-list-row',
     mounted: function () {
       this.getproducto2();
-      console.log('mounted: got here')
+      console.log('mounted: got here2')
     },
     data(){
         return{
