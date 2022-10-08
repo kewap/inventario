@@ -49,6 +49,7 @@ import axios from "axios";
 export default {
     name: 'table-evento-list-row',
     mounted: function () {
+        this.test();
       this.getproducto2();
       console.log('mounted: got here2')
     },
@@ -94,6 +95,12 @@ export default {
     },
     btnProducto(){
         window.location.href = "agregarproducto";
+    },
+    test(){
+        axios.get("http://34.199.55.97/productosall").then((result) => {
+        //this.eventos = result.data;
+        console.log(result.data);
+    })
     }
   }
 };
