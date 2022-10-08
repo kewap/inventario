@@ -49,7 +49,7 @@ import axios from "axios";
 export default {
     name: 'table-evento-list-row',
     mounted: function () {
-        console.log('hola')
+        console.log('hola');
         this.test();
       this.getproducto2();
       console.log('mounted: got here2')
@@ -64,7 +64,7 @@ export default {
         }
     },
   created() {
-    console.log('created')
+    console.log('created');
   },
   methods:{
       
