@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Inventario</h1>
+            <h1>Inventario2</h1>
         </div>
     </div>
     <div class="row">
