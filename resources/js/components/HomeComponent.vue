@@ -51,7 +51,7 @@ export default {
     mounted: function () {
         console.log('hola');
         this.test();
-        this.getproducto2();
+        //this.getproducto2();
       console.log('mounted: got here2')
     },
     data(){
