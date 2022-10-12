@@ -50,8 +50,8 @@ export default {
     name: 'table-evento-list-row',
     mounted: function () {
         console.log('hola');
-        //this.test();
-      this.getproducto2();
+        this.test();
+        this.getproducto2();
       console.log('mounted: got here2')
     },
     data(){
@@ -99,7 +99,7 @@ export default {
         window.location.href = "agregarproducto";
     },
     test(){
-        axios.get("http://34.199.55.97/productosall").then((result) => {
+        this.$http.get("http://34.199.55.97/productosall").then((result) => {
         //this.eventos = result.data;
         console.log(result.data);
     })
