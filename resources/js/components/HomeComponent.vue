@@ -99,9 +99,9 @@ export default {
         window.location.href = "agregarproducto";
     },
     test(){
-        this.$http.get("http://34.199.55.97/productosall").then((result) => {
+        this.$http.get("/productosall").then((result) => {
         //this.eventos = result.data;
-        console.log(result.data);
+        console.log(result);
     })
     }
   }
