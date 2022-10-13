@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Inventario2</h1>
+            <h1>Inventario</h1>
         </div>
     </div>
     <div class="row">
@@ -50,8 +50,8 @@ export default {
     name: 'table-evento-list-row',
     mounted: function () {
         console.log('hola');
-        this.test();
-        //this.getproducto2();
+        //this.test();
+        this.getproducto2();
       console.log('mounted: got here2')
     },
     data(){
