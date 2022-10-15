@@ -60,6 +60,9 @@ export default {
       
     async guardar() {
       axios.post("http://34.199.55.97/pistolear/"+this.message).then((result) => {
+        console.log('returnnn')
+        console.log(result)
+        console.log('asdasd')
         this.message = '';
         this.message2 = 'despachado';
         console.log(result.data);
