@@ -20,7 +20,8 @@
                     <input class="form-control" v-model="message" v-on:keyup.enter="getproducto"/>
                     <!--<button class="btn btn-primary" v-on:click="getproducto">Buscar</button>-->
                 </div>
-                <div class="card-body">                    
+                <div class="card-body">   
+                    <p>{{ id_producto }}</p>                 
                     <p>{{ producto }}</p>
                     
                 </div>
@@ -72,7 +73,7 @@ export default {
 
     async getproducto(){
         axios.get("http://34.199.55.97/getpistolear/"+this.message).then((result) => {
-        this.message = this.id_producto;
+        this.id_producto = this.message;
         this.producto = result.data.nombre+' / '+result.data.descripcion;
         this.message2 = '';
         this.estado = result.data.estado;
