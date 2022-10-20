@@ -28,10 +28,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="evento in eventos" :key="evento">
-                        <td>{{ evento.stock }}</td>
-                        <td>{{ evento.despachado }}</td>
-                        <td>{{ evento.nombre_producto }}</td>
+                    <tr v-for="(evento, idx) in eventos" :key="idx">
+                        <td>{{ idx.stock }}</td>
+                        <td>{{ idx.despachado }}</td>
+                        <td>{{ idx.nombre_producto }}</td>
                     </tr>
                 </tbody>
             </table>
