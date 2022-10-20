@@ -27,7 +27,7 @@
                 </div>
                 <div class="card-footer">
                     <div v-if="estado === '0'">
-                        <button class="btn btn-primary" v-on:click="guardar">Despachar</button><p>{{ message2 }}</p>
+                        <button class="btn btn-primary" id="btndespachar" v-on:click="guardar">Despachar</button><p>{{ message2 }}</p>
                     </div>
                     <div v-if="estado === '1'">
                         <p>producto ya despachado el {{ message3 }}</p>
@@ -80,6 +80,7 @@ export default {
         this.message3 = new Date(Date.parse(result.data.fecha)).toLocaleDateString('es-CL');
         console.log(result.data);
         this.message = '';
+        document.getElementById('btndespachar').focus();
     })
     },
     btnHome(){
