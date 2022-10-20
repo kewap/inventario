@@ -60,7 +60,7 @@ export default {
   methods:{
       
     async guardar() {
-      axios.post("http://34.199.55.97/pistolear/"+this.message).then((result) => {
+      axios.post("http://34.199.55.97/pistolear/"+this.id_producto).then((result) => {
         console.log('returnnn')
         console.log(result)
         console.log('asdasd')
