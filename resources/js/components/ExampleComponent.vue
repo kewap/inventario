@@ -72,7 +72,7 @@ export default {
 
     async getproducto(){
         axios.get("http://34.199.55.97/getpistolear/"+this.message).then((result) => {
-        this.id_producto = this.message;
+        this.message = this.id_producto;
         this.producto = result.data.nombre+' / '+result.data.descripcion;
         this.message2 = '';
         this.estado = result.data.estado;
