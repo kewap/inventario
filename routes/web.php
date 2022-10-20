@@ -25,7 +25,7 @@ Route::get('/barcode', [App\Http\Controllers\barcodecontroller::class, 'barcode'
 
 Route::get('/postproducto/{cantidad}/{producto}', [App\Http\Controllers\inventarioController::class, 'postproducto']);
 
-Route::get('/pistolear', [App\Http\Controllers\HomeController::class, 'pistolear']);
+Route::get('/zonapistola', [App\Http\Controllers\HomeController::class, 'pistolear']);
 
 Route::get('/agregarproducto', [App\Http\Controllers\HomeController::class, 'producto']);
 

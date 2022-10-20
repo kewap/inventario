@@ -27,7 +27,7 @@ class HomeController extends Controller
     }
 
     public function pistolear(){
-        return view('pistolear');
+        return view('zonapistola');
     }
 
     public function producto(){
