@@ -93,7 +93,7 @@ export default {
     })
     },
     btnPistolear(){
-        window.location.href = "pistolear";
+        window.location.href = "zonapistola";
     },
     btnProducto(){
         window.location.href = "agregarproducto";
