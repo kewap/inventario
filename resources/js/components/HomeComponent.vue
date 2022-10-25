@@ -52,7 +52,7 @@ export default {
         console.log('hola');
         //this.test();
         this.getproducto2();
-      console.log('mounted: got here2')
+      console.log('mounted: got here2');
     },
     data(){
         return{
