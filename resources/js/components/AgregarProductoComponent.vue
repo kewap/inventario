@@ -31,8 +31,9 @@
                     </div>      
                     <b-col md="4" xl="4" class="mb-1">
                         <label for="textarea-default">Clasificación del Evento:</label>
-                        <select v-model="tipo" :options="TIPO_EMPRESA" class="form-control">
-                            
+                        <select v-model="tipo" class="form-control">
+                            <option value="DRIMA">DRIMA</option>
+                            <option value="FABRICALONLINE">FABRICALONLINE</option>
                         </select> 
                         
                     </b-col>     
@@ -72,10 +73,7 @@ export default {
 			person:''
 		},
         tipo:'',
-        TIPO_EMPRESA: [
-          { value: "DRIMA", text: "DRIMA" },
-          { value: "FABRICALONLINE", text: "FABRICALONLINE" }
-        ],
+        
         }
     },
   created() {
