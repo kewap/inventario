@@ -61,10 +61,10 @@
 
 <script>
 import axios from "axios";
-import { BTab } from 'bootstrap-vue';
+import { BTabs } from 'bootstrap-vue';
 export default {
     components:{
-        BTab
+        BTabs
     },
     name: 'table-evento-list-row',
     mounted: function () {
