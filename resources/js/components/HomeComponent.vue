@@ -18,24 +18,39 @@
     </div>
     <div class="row">
         <div class="col-md-12 my-5">
-            <div class="card">
-                <table class="table">
-                <thead>
-                    <tr>
-                        <th>Stock</th>
-                        <th>Despachado</th>
-                        <th>Nombre Producto</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="evento in eventos" :key="evento">
-                        <td>{{ evento.stock }}</td>
-                        <td>{{ evento.despachado }}</td>
-                        <td>{{ evento.nombre_producto }}</td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
+
+            <div>
+                <b-card no-body>
+                    <b-tabs card>
+                    <b-tab title="Drima" active>
+                        <b-card-text>
+                            <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Stock</th>
+                                    <th>Despachado</th>
+                                    <th>Nombre Producto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="evento in eventos" :key="evento">
+                                    <td>{{ evento.stock }}</td>
+                                    <td>{{ evento.despachado }}</td>
+                                    <td>{{ evento.nombre_producto }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </b-card-text>
+                    </b-tab>
+                    <b-tab title="Fabricalonline">
+                        <b-card-text>Tab contents 2</b-card-text>
+                    </b-tab>
+                    </b-tabs>
+                </b-card>
+                </div>
+
+
+            
             
         </div>
         

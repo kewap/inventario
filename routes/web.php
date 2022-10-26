@@ -37,4 +37,4 @@ Route::get('/productosall', [App\Http\Controllers\inventarioController::class, '
 
 Route::get('/productos', [App\Http\Controllers\inventarioController::class, 'index']);
 
-Route::get('/pdf/{cantidad}/{producto}', [App\Http\Controllers\inventarioController::class, 'pdf']);
+Route::get('/pdf/{cantidad}/{producto}/{tipo}', [App\Http\Controllers\inventarioController::class, 'pdf']);

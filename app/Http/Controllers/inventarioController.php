@@ -155,7 +155,7 @@ class inventarioController extends Controller
         //print_r($barcode);
     }
 
-    public function pdf($cantidad,$idproducto){
+    public function pdf($cantidad,$idproducto,$tipo_empresa){
 
         $producto = tbl_productos::where('id', $idproducto)->get();
         

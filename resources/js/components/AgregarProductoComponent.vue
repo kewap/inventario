@@ -137,7 +137,7 @@ export default {
     },
     agregarstock(){
         console.log();
-        window.location.href = "pdf/"+this.cantidad+'/'+this.selected.person;
+        window.location.href = "pdf/"+this.cantidad+'/'+this.selected.person+'/'+this.tipo;
     }
   }
 };
