@@ -28,7 +28,11 @@
                     <div class="col">
                         <label for="">Cantidad</label>
                         <input type="text" v-model="cantidad" class="form-control">
-                    </div>           
+                    </div>      
+                    <b-col md="4" xl="4" class="mb-1">
+                        <label for="textarea-default">Clasificación del Evento:</label>
+                        <b-form-select v-model="tipo" :options="TIPO_EMPRESA" />
+                    </b-col>     
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary" v-on:click="agregarstock">Agregar Lote Stock</button>
@@ -64,7 +68,11 @@ export default {
 		selected:{
 			person:''
 		},
-            
+        tipo:'',
+        TIPO_EMPRESA: [
+          { value: "DRIMA", text: "DRIMA" },
+          { value: "FABRICALONLINE", text: "FABRICALONLINE" }
+        ],
         }
     },
   created() {
