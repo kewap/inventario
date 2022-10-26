@@ -48,8 +48,18 @@
 </template>
 
 <script>
+
 import axios from "axios";
+
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
 export default {
+    components: {
+    
+    BFormSelect,
+    
+    vSelect,
+  },
     mounted: function () {
       this.getPersons()
       console.log('mounted: got here')
