@@ -31,7 +31,10 @@
                     </div>      
                     <b-col md="4" xl="4" class="mb-1">
                         <label for="textarea-default">Clasificación del Evento:</label>
-                        <b-form-select v-model="tipo" :options="TIPO_EMPRESA" />
+                        <select v-model="tipo" :options="TIPO_EMPRESA" class="form-control">
+                            
+                        </select> 
+                        
                     </b-col>     
                 </div>
                 <div class="card-footer">
@@ -48,18 +51,8 @@
 </template>
 
 <script>
-
 import axios from "axios";
-
-import vSelect from "vue-select";
-import "vue-select/dist/vue-select.css";
 export default {
-    components: {
-    
-    BFormSelect,
-    
-    vSelect,
-  },
     mounted: function () {
       this.getPersons()
       console.log('mounted: got here')
