@@ -61,6 +61,9 @@
 
 <script>
 import axios from "axios";
+import BootstrapVue from "bootstrap-vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 export default {
     name: 'table-evento-list-row',
     mounted: function () {
