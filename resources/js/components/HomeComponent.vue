@@ -52,12 +52,7 @@
 </template>
 
 <script>
-import {
-  
-  BTabs,
-  BTab
-} 
-from "bootstrap-vue";
+
 import axios from "axios";
 export default {
     name: 'table-evento-list-row',
@@ -121,5 +116,8 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+
+<style lang="scss">
+    @import "~@/assets/scss/vendors/bootstrap-vue/_custom"; 
+    @import "~@/assets/scss/vendors/bootstrap-vue/index";  
 </style>
