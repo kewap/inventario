@@ -61,11 +61,7 @@
 
 <script>
 import axios from "axios";
-import { BTabs } from 'bootstrap-vue';
 export default {
-    components:{
-        BTabs
-    },
     name: 'table-evento-list-row',
     mounted: function () {
         console.log('hola');
