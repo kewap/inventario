@@ -19,12 +19,7 @@
     <div class="row">
         <div class="col-md-12 my-5">
 
-            <div>
-                <b-card no-body>
-                    <b-tabs card>
-                    <b-tab title="Drima" active>
-                        <b-card-text>
-                            <table class="table">
+            <table class="table">
                             <thead>
                                 <tr>
                                     <th>Stock</th>
@@ -40,15 +35,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                        </b-card-text>
-                    </b-tab>
-                    <b-tab title="Fabricalonline">
-                        <b-card-text>Tab contents 2</b-card-text>
-                    </b-tab>
-                    </b-tabs>
-                </b-card>
-                </div>
-
 
             
             
@@ -61,9 +47,6 @@
 
 <script>
 import axios from "axios";
-import BootstrapVue from "bootstrap-vue";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
 export default {
     name: 'table-evento-list-row',
     mounted: function () {
