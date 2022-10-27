@@ -30,7 +30,7 @@
                         <input type="text" v-model="cantidad" class="form-control">
                     </div>      
                     <b-col md="4" xl="4" class="mb-1">
-                        <label for="textarea-default">Empresa:</label>
+                        <label for="textarea-default">Marca:</label>
                         <select v-model="tipo" class="form-control">
                             <option value="DRIMA">DRIMA</option>
                             <option value="FABRICALONLINE">FABRICALONLINE</option>
