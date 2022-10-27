@@ -116,8 +116,5 @@ export default {
 };
 </script>
 
-
-<style lang="scss">
-    @import "~@/assets/scss/vendors/bootstrap-vue/_custom"; 
-    @import "~@/assets/scss/vendors/bootstrap-vue/index";  
+<style scoped lang="scss">
 </style>
