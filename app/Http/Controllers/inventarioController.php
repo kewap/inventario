@@ -127,8 +127,8 @@ class inventarioController extends Controller
         nombre_producto,
         COUNT(if(estado_inventario = 0,1,null)) as 'stock',
         COUNT(if(estado_inventario = 1,1,null)) as 'despachado'
-        FROM vw_inventario
-        GROUP BY nombre_producto") );
+        FROM vw_inventario2
+        GROUP BY nombre_producto WHERE marca='DRIMA'") );
 
         
         return $results;
