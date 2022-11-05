@@ -110,7 +110,7 @@ export default {
         window.location.href = "agregarproducto";
     },
     btnInventarioFull(){
-        window.location.href = "inventario";
+        window.location.href = "inventariofull";
     },
     
 
