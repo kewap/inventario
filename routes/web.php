@@ -31,7 +31,7 @@ Route::get('/postproducto/{cantidad}/{producto}', [App\Http\Controllers\inventar
 
 Route::get('/zonapistola', [App\Http\Controllers\HomeController::class, 'pistolear']);
 
-Route::get('/inventariofull', [App\Http\Controllers\HomeController::class, 'inventario']);
+Route::get('/inventariofull', [App\Http\Controllers\HomeController::class, 'inventariofull']);
 
 Route::get('/agregarproducto', [App\Http\Controllers\HomeController::class, 'producto']);
 
