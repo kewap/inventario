@@ -33,4 +33,8 @@ class HomeController extends Controller
     public function producto(){
         return view('producto');
     }
+
+    public function inventariofull(){
+        return view('inventario');
+    }
 }

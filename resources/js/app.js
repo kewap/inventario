@@ -22,6 +22,7 @@ window.Vue = require('vue').default;
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('home2', require('./components/HomeComponent.vue').default);
 Vue.component('agregar-producto', require('./components/AgregarProductoComponent.vue').default);
+Vue.component('inventario', require('./components/InventarioComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

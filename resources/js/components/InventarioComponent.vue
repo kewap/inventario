@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Inventario</h1>
+            <h1>Inventario Extendido</h1>
         </div>
     </div>
     <div class="row">
@@ -13,9 +13,6 @@
         </div>
         <div class="col">
             <button class="btn btn-primary" v-on:click="btnProducto">Agregar Stock</button>
-        </div>
-        <div class="col">
-            <button class="btn btn-primary" v-on:click="btnInventarioFull">Inventario Full</button>
         </div>
         
     </div>
@@ -39,13 +36,7 @@
                             </tbody>
                         </table>
 
-            <div>
-  <b-tabs content-class="mt-3">
-    <b-tab title="First" active><p>I'm the first tab</p></b-tab>
-    <b-tab title="Second"><p>I'm the second tab</p></b-tab>
-    <b-tab title="Disabled" disabled><p>I'm a disabled tab!</p></b-tab>
-  </b-tabs>
-</div>
+           
             
         </div>
         
@@ -109,12 +100,6 @@ export default {
     btnProducto(){
         window.location.href = "agregarproducto";
     },
-    btnInventarioFull(){
-        window.location.href = "inventario";
-    },
-    
-
-
     test(){
         this.$http.get("/productosall").then((result) => {
         //this.eventos = result.data;
