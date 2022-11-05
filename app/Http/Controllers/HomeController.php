@@ -35,6 +35,6 @@ class HomeController extends Controller
     }
 
     public function inventariofull(){
-        return view('inventario');
+        return view('inventariofull');
     }
 }
