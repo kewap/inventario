@@ -14,6 +14,7 @@ class tbl_inventario extends Model
         'uuid',
         'id_producto',
         'estado',
+        'plataforma',
         'created_at',
         'updated_at'
     ];

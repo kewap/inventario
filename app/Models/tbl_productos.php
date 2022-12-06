@@ -14,6 +14,8 @@ class tbl_productos extends Model
         'uuid',
         'nombre',
         'descripcion',
+        'title',
+        'marca',
         'created_at',
         'updated_at'
     ];
