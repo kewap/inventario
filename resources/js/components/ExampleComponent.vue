@@ -27,6 +27,15 @@
                 </div>
                 <div class="card-footer">
                     <div v-if="estado === '0'">
+                        
+                        <select v-model="tipo" class="form-control">
+                            <option value="DRIMA">DRIMA</option>
+                            <option value="FABRICALONLINE">FABRICALONLINE</option>
+                            <option value="MERCADOLIBRE">MERCADOLIBRE</option>
+                            <option value="FALABELLA">FALABELLA</option>
+                        </select> 
+                        
+                        <br>
                         <button class="btn btn-primary" v-bind:id="btndespachar" v-on:click="guardar">Despachar</button><p>{{ message2 }}</p>
                     </div>
                     <div v-if="estado === '1'">
@@ -52,16 +61,17 @@ export default {
             message2:'',
             producto:'',
             estado:'',
-            id_producto:''
+            id_producto:'',
+            tipo:''
         }
     },
-  created() {
-    
+  async created() {
+    this.url = process.env.MIX_API_URL;
   },
   methods:{
       
     async guardar() {
-      axios.post("http://34.199.55.97/pistolear/"+this.id_producto).then((result) => {
+      axios.post(process.env.MIX_API_URL+"/pistolear/"+this.id_producto+"/"+this.tipo).then((result) => {
         console.log('returnnn')
         console.log(result)
         console.log('asdasd')
@@ -72,7 +82,7 @@ export default {
     },
 
     async getproducto(){
-        axios.get("http://34.199.55.97/getpistolear/"+this.message).then((result) => {
+        axios.get(process.env.MIX_API_URL+"/getpistolear/"+this.message).then((result) => {
         this.id_producto = this.message;
         this.producto = result.data.nombre+' / '+result.data.descripcion;
         this.message2 = '';

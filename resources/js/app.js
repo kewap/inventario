@@ -23,6 +23,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('home2', require('./components/HomeComponent.vue').default);
 Vue.component('agregar-producto', require('./components/AgregarProductoComponent.vue').default);
 Vue.component('inventario', require('./components/InventarioComponent.vue').default);
+Vue.component('fabricalonline', require('./components/FabricalonlineComponent.vue').default);
+Vue.component('despachodrima', require('./components/DespachoDrimaComponent.vue').default);
+Vue.component('despachofabricalonline', require('./components/DespachoFabricalonlineComponent.vue').default);
+Vue.component('despachomercadolibre', require('./components/DespachoMercadoLibreComponent.vue').default);
+Vue.component('despachofalabella', require('./components/DespachoFalabellaComponent.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

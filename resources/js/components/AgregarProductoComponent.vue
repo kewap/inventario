@@ -29,14 +29,7 @@
                         <label for="">Cantidad</label>
                         <input type="text" v-model="cantidad" class="form-control">
                     </div>      
-                    <b-col md="4" xl="4" class="mb-1">
-                        <label for="textarea-default">Marca:</label>
-                        <select v-model="tipo" class="form-control">
-                            <option value="DRIMA">DRIMA</option>
-                            <option value="FABRICALONLINE">FABRICALONLINE</option>
-                        </select> 
-                        
-                    </b-col>     
+                    
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary" v-on:click="agregarstock">Agregar Lote Stock</button>
@@ -69,15 +62,15 @@ export default {
         shirtSizeOptions: [],
         inputproducto:'',
          persons: [],
-		selected:{
-			person:''
-		},
+        selected:{
+            person:''
+        },
         tipo:'',
         
         }
     },
-  created() {
-    
+  async created() {
+    this.url = process.env.MIX_API_URL;
   },
   methods:{
         getPersons(){
@@ -116,7 +109,7 @@ export default {
       },
       
     async guardar() {
-      axios.post("http://34.199.55.97/pistolear/"+this.message).then((result) => {
+      axios.post(process.env.MIX_API_URL+"/pistolear/"+this.message).then((result) => {
         this.message = '';
         this.message2 = 'despachado';
         console.log(result.data);
@@ -124,7 +117,7 @@ export default {
     },
 
     async getproducto(){
-        axios.get("http://34.199.55.97/getpistolear/"+this.message).then((result) => {
+        axios.get(process.env.MIX_API_URL+"/getpistolear/"+this.message).then((result) => {
         this.producto = result.data.nombre+result.data.descripcion;
         this.message2 = '';
         this.estado = result.data.estado;
@@ -137,7 +130,7 @@ export default {
     },
     agregarstock(){
         console.log();
-        window.location.href = "pdf/"+this.cantidad+'/'+this.selected.person+'/'+this.tipo;
+        window.location.href = "pdf/"+this.cantidad+'/'+this.selected.person;
     }
   }
 };

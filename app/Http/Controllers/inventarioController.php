@@ -95,8 +95,8 @@ class inventarioController extends Controller
         //return $barcode;
     }
 
-    public function pistolear($id){
-        return tbl_inventario::where('id',$id)->update(['estado'=>'1']);
+    public function pistolear($id,$plataforma){
+        return tbl_inventario::where('id',$id)->update(['estado'=>'1','plataforma'=>$plataforma]);
         
         //return 'pistolea3';
         //return $producto;
@@ -135,6 +135,75 @@ class inventarioController extends Controller
         return $results;
     }
 
+    public function productosallfabricalonline(){
+        $results = DB::select( DB::raw("SELECT 
+        nombre_producto,
+        COUNT(if(estado_inventario = 0,1,null)) as 'stock',
+        COUNT(if(estado_inventario = 1,1,null)) as 'despachado'
+        FROM vw_inventario2
+        WHERE marca='FABRICALONLINE' 
+        GROUP BY nombre_producto") );
+
+        
+        return $results;
+    }
+
+    public function productosallmercadolibre(){
+        $results = DB::select( DB::raw("SELECT 
+        nombre_producto,
+        COUNT(if(estado_inventario = 0,1,null)) as 'stock',
+        COUNT(if(estado_inventario = 1,1,null)) as 'despachado'
+        FROM vw_inventario2
+        WHERE marca='MERCADOLIBRE' 
+        GROUP BY nombre_producto") );
+
+        
+        return $results;
+    }
+
+    public function productosallfalabella(){
+        $results = DB::select( DB::raw("SELECT 
+        nombre_producto,
+        COUNT(if(estado_inventario = 0,1,null)) as 'stock',
+        COUNT(if(estado_inventario = 1,1,null)) as 'despachado'
+        FROM vw_inventario2
+        WHERE marca='FALABELLA' 
+        GROUP BY nombre_producto") );
+
+        
+        return $results;
+    }
+
+    public function getdespachodrima(){
+        $results = DB::select( DB::raw("SELECT id_inventario,nombre_producto,plataforma,marca,updated_at FROM `vw_inventario2` WHERE estado_inventario = 1 AND plataforma='DRIMA'") );
+
+        
+        return $results;
+    }
+
+    public function getdespachofabricalonline(){
+        $results = DB::select( DB::raw("SELECT id_inventario,nombre_producto,plataforma,marca,updated_at FROM `vw_inventario2` WHERE estado_inventario = 1 AND plataforma='FABRICALONLINE'") );
+
+        
+        return $results;
+    }
+
+    public function getdespachomercadolibre(){
+        $results = DB::select( DB::raw("SELECT id_inventario,nombre_producto,plataforma,marca,updated_at FROM `vw_inventario2` WHERE estado_inventario = 1 AND plataforma='MERCADOLIBRE'") );
+
+        
+        return $results;
+    }
+
+    public function getdespachofalabella(){
+        $results = DB::select( DB::raw("SELECT id_inventario,nombre_producto,plataforma,marca,updated_at FROM `vw_inventario2` WHERE estado_inventario = 1 AND plataforma='FALABELLA'") );
+
+        
+        return $results;
+    }
+
+
+
     public function postproducto2($cantidad,$producto){
         //buscar producto
         //$producto = tbl_producto::where('id', $producto)->get();
@@ -156,7 +225,7 @@ class inventarioController extends Controller
         //print_r($barcode);
     }
 
-    public function pdf($cantidad,$idproducto,$tipo_empresa){
+    public function pdf($cantidad,$idproducto){
 
         $producto = tbl_productos::where('id', $idproducto)->get();
         
@@ -169,6 +238,7 @@ class inventarioController extends Controller
             $inventario->uuid = Uuid::generate()->string;
             $inventario->id_producto = $idproducto;
             $inventario->estado = 0;
+            $inventario->plataforma = '';
             $inventario->save();
             $id_inventario = $inventario->id;
             $return = [

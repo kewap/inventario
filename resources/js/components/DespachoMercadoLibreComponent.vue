@@ -3,15 +3,13 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Inventario Drima</h1>
+            <h1>Despacho MercadoLibre</h1>
         </div>
     </div><hr>
     <div class="row">
-        <div class="col">
+        <div class="col-4">
             <button class="btn btn-primary" v-on:click="btnPistolear">Pistolear</button>
             <button class="btn btn-primary" v-on:click="btnProducto">Agregar Stock</button>
-            <button class="btn btn-primary" >Agregar Producto</button>
-            <button class="btn btn-primary" >Crear Etiqueta</button>
         </div>
     </div><hr>
     <div class="row">
@@ -34,16 +32,20 @@
             <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Stock</th>
-                                    <th>Despachado</th>
+                                    <th>ID Producto</th>
                                     <th>Nombre Producto</th>
+                                    <th>Plataforma</th>
+                                    <th>Marca</th>
+                                    <th>Fecha</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="evento in eventos" :key="evento">
-                                    <td>{{ evento.stock }}</td>
-                                    <td>{{ evento.despachado }}</td>
+                                    <td>{{ evento.id_inventario }}</td>
                                     <td>{{ evento.nombre_producto }}</td>
+                                    <td>{{ evento.plataforma }}</td>
+                                    <td>{{ evento.marca }}</td>
+                                    <td>{{ evento.updated_at }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -104,7 +106,7 @@ export default {
     })
     },
     async getproducto2(){
-        axios.get(process.env.MIX_API_URL+'/productosall').then((result) => {
+        axios.get(process.env.MIX_API_URL+'/getdespachomercadolibre').then((result) => {
         this.eventos = result.data;
         console.log(result.data);
     })

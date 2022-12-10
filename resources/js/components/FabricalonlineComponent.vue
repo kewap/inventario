@@ -3,15 +3,13 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Inventario Drima</h1>
+            <h1>Inventario Fabricalonline</h1>
         </div>
     </div><hr>
     <div class="row">
-        <div class="col">
+        <div class="col-4">
             <button class="btn btn-primary" v-on:click="btnPistolear">Pistolear</button>
             <button class="btn btn-primary" v-on:click="btnProducto">Agregar Stock</button>
-            <button class="btn btn-primary" >Agregar Producto</button>
-            <button class="btn btn-primary" >Crear Etiqueta</button>
         </div>
     </div><hr>
     <div class="row">
@@ -104,7 +102,7 @@ export default {
     })
     },
     async getproducto2(){
-        axios.get(process.env.MIX_API_URL+'/productosall').then((result) => {
+        axios.get(process.env.MIX_API_URL+'/productosallfabricalonline').then((result) => {
         this.eventos = result.data;
         console.log(result.data);
     })

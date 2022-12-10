@@ -37,4 +37,24 @@ class HomeController extends Controller
     public function inventariofull(){
         return view('inventario');
     }
+
+    public function inventariofullfabricalonline(){
+        return view('fabricalonline');
+    }
+
+    public function despachodrima(){
+        return view('despachodrima');
+    }
+
+    public function despachofabricalonline(){
+        return view('despachofabricalonline');
+    }
+
+    public function despachomercadolibre(){
+        return view('despachomercadolibre');
+    }
+
+    public function despachofalabella(){
+        return view('despachofalabella');
+    }
 }
