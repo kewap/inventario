@@ -72,6 +72,7 @@ class inventarioController extends Controller
         
         $producto_nombre = $producto[0]->nombre;
         $producto_descripcion = $producto[0]->descripcion;
+        $marca = $producto[0]->marca;
         
         //crear inventario
         for ($x = 0; $x < $cantidad; $x++) {
@@ -79,11 +80,12 @@ class inventarioController extends Controller
             $inventario->uuid = Uuid::generate()->string;
             $inventario->id_producto = $idproducto;
             $inventario->estado = 0;
+            
             $inventario->save();
             $id_inventario = $inventario->id;
             $return = [
                 "id" => $id_inventario,
-                "nombre" => $producto_nombre,
+                "nombre" => $marca,
                 "descripcion" => $producto_descripcion 
             ];
             $barcode[] = $return;
@@ -231,6 +233,7 @@ class inventarioController extends Controller
         
         $producto_nombre = $producto[0]->title;
         $producto_descripcion = $producto[0]->descripcion;
+        $marca = $producto[0]->marca;
         
         //crear inventario
         for ($x = 0; $x < $cantidad; $x++) {
@@ -238,7 +241,7 @@ class inventarioController extends Controller
             $inventario->uuid = Uuid::generate()->string;
             $inventario->id_producto = $idproducto;
             $inventario->estado = 0;
-            $inventario->plataforma = '';
+            $inventario->plataforma = $marca;
             $inventario->save();
             $id_inventario = $inventario->id;
             $return = [
@@ -277,4 +280,18 @@ class inventarioController extends Controller
         return $pdf->stream('archivo.pdf');
         */
     }
+
+    public function postarticulo($nombre_producto,$marca,$titulo_etiqueta,$descripcion_etiqueta){
+
+        $articulo = new tbl_productos;
+        $articulo->uuid = Uuid::generate()->string;
+        $articulo->nombre = $nombre_producto;
+        $articulo->descripcion = $descripcion_etiqueta;
+        $articulo->title = $titulo_etiqueta;
+        $articulo->marca = $marca;
+        $articulo->save();
+        return $id = $articulo->id;
+
+    }
+
 }

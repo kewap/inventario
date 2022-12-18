@@ -57,4 +57,8 @@ class HomeController extends Controller
     public function despachofalabella(){
         return view('despachofalabella');
     }
+
+    public function agregararticulo(){
+        return view('articulo');
+    }
 }

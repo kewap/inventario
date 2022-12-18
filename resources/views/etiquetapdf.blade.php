@@ -32,6 +32,13 @@
 
     <!--
        
+    etiqueta fabricalo
+    ^XA ^FO90,60^A0,30^FD FABRICALONLINE.COM ^FS ^FO45, 110^ADN, 12, 7^FD ads ^FS ^FO45, 140^ADN, 12, 7^FD qwe ^FS ^FO90,180^BY4^BC,60,N,N,N,N^A1,20,^FD101^FS ^FO50, 260^ADN, 12, 7^FD www.fabricalonline.com - Chile ^FS ^FO25,25^GB435,275,2^FS ^XZ ^XA
+    etiqueta drima
+    ^XA ^FO50,60^A0,30^FD DRIMA - ORTOPEDIA DIGITAL ^FS ^FO45, 110^ADN, 12, 7^FD ads ^FS ^FO45, 140^ADN, 12, 7^FD qwe ^FS ^FO90,180^BY4^BC,60,N,N,N,N^A1,20,^FD101^FS
+^FO90, 260^ADN, 12, 7^FD www.drima.cl - La Serena ^FS
+^FO25,25^GB435,275,2^FS
+^XZ
 
         <table style="border:4px solid #000; border-radius:0px;padding:5px">
         <tr>

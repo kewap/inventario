@@ -28,6 +28,7 @@ Vue.component('despachodrima', require('./components/DespachoDrimaComponent.vue'
 Vue.component('despachofabricalonline', require('./components/DespachoFabricalonlineComponent.vue').default);
 Vue.component('despachomercadolibre', require('./components/DespachoMercadoLibreComponent.vue').default);
 Vue.component('despachofalabella', require('./components/DespachoFalabellaComponent.vue').default);
+Vue.component('agregar-articulo', require('./components/AgregarArticuloComponent.vue').default);
 
 
 /**
