@@ -10,8 +10,7 @@
         <div class="col">
             <button class="btn btn-primary" v-on:click="btnPistolear">Pistolear</button>
             <button class="btn btn-primary" v-on:click="btnProducto">Agregar Stock</button>
-            <button class="btn btn-primary" v-on:click="btnAgregarArticulo">Agregar Producto</button>
-            
+            <button class="btn btn-primary" v-on:click="btnAgregarArticulo">Agregar Producto</button>            
         </div>
     </div><hr>
     <div class="row">

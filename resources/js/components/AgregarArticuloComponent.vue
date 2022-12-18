@@ -69,7 +69,7 @@ export default {
         return{
             cantidad:'',
             message:'',
-            message2:'',
+            message2:'', 
             producto:'',
             estado:'',
             shirtSizes: [],
