@@ -294,4 +294,51 @@ class inventarioController extends Controller
 
     }
 
+    public function postarticulodirecto($nombre_producto,$marca,$titulo_etiqueta,$descripcion_etiqueta,$destino){
+
+        $articulo = new tbl_productos;
+        $articulo->uuid = Uuid::generate()->string;
+        $articulo->nombre = $nombre_producto;
+        $articulo->descripcion = $descripcion_etiqueta;
+        $articulo->title = $titulo_etiqueta;
+        $articulo->marca = $marca;
+        $articulo->save();
+        $idproducto = $articulo->id;
+
+        $cantidad = 1;
+        $producto = tbl_productos::where('id', $idproducto)->get();
+        
+        $producto_nombre = $producto[0]->title;
+        $producto_descripcion = $producto[0]->descripcion;
+        $marca = $producto[0]->marca;
+        
+        //crear inventario
+        for ($x = 0; $x < $cantidad; $x++) {
+            $inventario = new tbl_inventario;
+            $inventario->uuid = Uuid::generate()->string;
+            $inventario->id_producto = $idproducto;
+            $inventario->estado = 1;
+            $inventario->plataforma = $destino;
+            $inventario->save();
+            $id_inventario = $inventario->id;
+            $return = [
+                "id" => $id_inventario,
+                "nombre" => $producto_nombre,
+                "descripcion" => $producto_descripcion 
+            ];
+            $barcode[] = $return;
+        }
+        
+        if($marca == 'DRIMA'){
+            return "^XA ^FO50,60^A0,30^FD DRIMA - ORTOPEDIA DIGITAL ^FS ^FO45, 110^ADN, 12, 7^FD ".$producto_nombre." ^FS ^FO45, 140^ADN, 12, 7^FD ".$producto_descripcion." ^FS ^FO70,180^BY4^BC,60,N,N,N,N^A1,20,^FD ".$id_inventario." ^FS ^FO90, 260^ADN, 12, 7^FD www.drima.cl - La Serena ^FS ^FO25,25^GB435,275,2^FS ^XZ ^XA";
+        }else{
+            return "^XA ^FO90,60^A0,30^FD FABRICALONLINE.COM ^FS ^FO45, 110^ADN, 12, 7^FD ".$producto_nombre." ^FS ^FO45, 140^ADN, 12, 7^FD ".$producto_descripcion." ^FS ^FO70,180^BY4^BC,60,N,N,N,N^A1,20,^FD ".$id_inventario." ^FS ^FO50, 260^ADN, 12, 7^FD www.fabricalonline.com - Chile ^FS ^FO25,25^GB435,275,2^FS ^XZ ^XA";
+        
+        }
+        
+                            
+        return $pdf->stream('archivo.pdf');
+
+    }
+
 }

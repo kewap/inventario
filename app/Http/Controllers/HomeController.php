@@ -42,6 +42,10 @@ class HomeController extends Controller
         return view('fabricalonline');
     }
 
+    public function inventariodrima(){
+        return view('inventariodrima');
+    }
+
     public function despachodrima(){
         return view('despachodrima');
     }
@@ -60,5 +64,9 @@ class HomeController extends Controller
 
     public function agregararticulo(){
         return view('articulo');
+    }
+
+    public function agregararticulodirecto(){
+        return view('articulodirecto');
     }
 }

@@ -7,23 +7,8 @@
         </div>
     </div><hr>
     <div class="row">
-        <div class="col-4">
-            <button class="btn btn-primary" v-on:click="btnPistolear">Pistolear</button>
-            <button class="btn btn-primary" v-on:click="btnProducto">Agregar Stock</button>
-        </div>
-    </div><hr>
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary" v-on:click="btnInventarioDrima">Inventario Drima</button>
-            <button class="btn btn-primary" v-on:click="btnInventarioFabricalonline">Inventario Fabricalonline</button>
-        </div>        
-    </div><hr>
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary" v-on:click="btnDespachoDrima">Despacho Drima</button>
-            <button class="btn btn-primary" v-on:click="btnDespachoFabricalonline">Despacho Fabricalonline</button>
-            <button class="btn btn-primary" v-on:click="btnDespachoMercadoLibre">Despacho MercadoLibre</button>
-            <button class="btn btn-primary" v-on:click="btnDespachoFalabella">Despacho Falabella</button>
+        <div class="col-1">
+            <button class="btn btn-primary" v-on:click="btnHome">Home</button>
         </div>        
     </div>
     <div class="row">
@@ -120,7 +105,7 @@ export default {
     btnInventarioFabricalonline(){
         window.location.href = "inventariofullfabricalonline";
     },
-    btnInventarioDrima(){
+    btnHome(){
         window.location.href = "home";
     },
 

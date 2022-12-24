@@ -3,13 +3,14 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Agregar Producto</h1>
+            <h1>Agregar Producto Directo</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-1">
             <button class="btn btn-primary" v-on:click="btnHome">Home</button>
-        </div>        
+        </div>
+        
     </div>
     <div class="row">
         <div class="col my-5">
@@ -25,6 +26,15 @@
                         <select v-model="marca" class="form-control">
                             <option value="DRIMA">DRIMA</option>
                             <option value="FABRICALONLINE">FABRICALONLINE</option>                            
+                        </select> 
+                    </div>  
+                    <div class="col">
+                        <label for="">Plataforma despacho</label>
+                        <select v-model="destino" class="form-control">
+                            <option value="DRIMA">DRIMA</option>
+                            <option value="FABRICALONLINE">FABRICALONLINE</option>
+                            <option value="MERCADOLIBRE">MERCADOLIBRE</option> 
+                            <option value="FALABELLA">FALABELLA</option>                             
                         </select> 
                     </div>   
                     <hr>
@@ -46,7 +56,7 @@
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary" v-on:click="guardar">Agregar Producto</button>
-                                     {{message2}}
+                                   <br><br>  {{message2}}
                 </div>
             </div>
         </div>
@@ -84,7 +94,8 @@ nombre_producto:'',
 marca:'',
 etiquetatitulo:'',
 etiquetadescripcion:'',
-prev_etiqueta:''
+prev_etiqueta:'',
+destino:''
         
         }
     },
@@ -128,9 +139,9 @@ prev_etiqueta:''
       },
       
     async guardar() {
-      axios.post(process.env.MIX_API_URL+"/agregararticulo/"+this.nombre_producto+"/"+this.marca+"/"+this.etiquetatitulo+"/"+this.etiquetadescripcion).then((result) => {
+      axios.post(process.env.MIX_API_URL+"/agregararticulodirecto/"+this.nombre_producto+"/"+this.marca+"/"+this.etiquetatitulo+"/"+this.etiquetadescripcion+"/"+this.destino).then((result) => {
         this.message = '';
-        this.message2 = 'producto agregado';
+        this.message2 = result.data;
         console.log(result.data);
     })
     },

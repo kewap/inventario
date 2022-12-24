@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Inventario Fabricalonline</h1>
+            <h1>Inventario Drima</h1>
         </div>
     </div><hr>
     <div class="row">
@@ -87,7 +87,7 @@ export default {
     })
     },
     async getproducto2(){
-        axios.get(process.env.MIX_API_URL+'/productosallfabricalonline').then((result) => {
+        axios.get(process.env.MIX_API_URL+'/productosall').then((result) => {
         this.eventos = result.data;
         console.log(result.data);
     })
@@ -116,6 +116,12 @@ export default {
     },
     btnDespachoFalabella(){
         window.location.href = "despachofalabella";
+    },
+    btnAgregarArticulo(){
+        window.location.href = "agregararticulo";
+    },
+    btnAgregarArticuloDirecto(){
+        window.location.href = "agregararticulodirecto";
     },
     
 

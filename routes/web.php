@@ -47,6 +47,10 @@ Route::get('/agregarproducto', [App\Http\Controllers\HomeController::class, 'pro
 
 Route::get('/agregararticulo', [App\Http\Controllers\HomeController::class, 'agregararticulo']);
 
+Route::get('/agregararticulodirecto', [App\Http\Controllers\HomeController::class, 'agregararticulodirecto']);
+
+Route::get('/inventariodrima', [App\Http\Controllers\HomeController::class, 'inventariodrima']);
+
 
 
 
@@ -75,3 +79,5 @@ Route::get('/getdespachomercadolibre', [App\Http\Controllers\inventarioControlle
 Route::get('/getdespachofalabella', [App\Http\Controllers\inventarioController::class, 'getdespachofalabella']);
 
 Route::post('/agregararticulo/{nombre_producto}/{marca}/{titulo}/{descripcion}', [App\Http\Controllers\inventarioController::class, 'postarticulo']);
+
+Route::post('/agregararticulodirecto/{nombre_producto}/{marca}/{titulo}/{descripcion}/{destino}', [App\Http\Controllers\inventarioController::class, 'postarticulodirecto']);

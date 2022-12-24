@@ -3,14 +3,15 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Inventario Drima</h1>
+            <h1>EL BODEGUERO</h1>
         </div>
     </div><hr>
     <div class="row">
         <div class="col">
             <button class="btn btn-primary" v-on:click="btnPistolear">Pistolear</button>
             <button class="btn btn-primary" v-on:click="btnProducto">Agregar Stock</button>
-            <button class="btn btn-primary" v-on:click="btnAgregarArticulo">Agregar Producto</button>            
+            <button class="btn btn-primary" v-on:click="btnAgregarArticulo">Agregar Producto</button>   
+            <button class="btn btn-primary" v-on:click="btnAgregarArticuloDirecto">Agregar Producto Directo</button>           
         </div>
     </div><hr>
     <div class="row">
@@ -27,33 +28,9 @@
             <button class="btn btn-primary" v-on:click="btnDespachoFalabella">Despacho Falabella</button>
         </div>        
     </div>
-    <div class="row">
-        <div class="col-md-12 my-5">
-
-            <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Stock</th>
-                                    <th>Despachado</th>
-                                    <th>Nombre Producto</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="evento in eventos" :key="evento">
-                                    <td>{{ evento.stock }}</td>
-                                    <td>{{ evento.despachado }}</td>
-                                    <td>{{ evento.nombre_producto }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-            <div>
-  
-</div>
-            
-        </div>
-        
-    </div>
+    
+      
+    
     
 </div>
 </template>
@@ -118,7 +95,7 @@ export default {
         window.location.href = "inventariofullfabricalonline";
     },
     btnInventarioDrima(){
-        window.location.href = "home";
+        window.location.href = "inventariodrima";
     },
 
     btnDespachoDrima(){
@@ -135,6 +112,9 @@ export default {
     },
     btnAgregarArticulo(){
         window.location.href = "agregararticulo";
+    },
+    btnAgregarArticuloDirecto(){
+        window.location.href = "agregararticulodirecto";
     },
     
 
